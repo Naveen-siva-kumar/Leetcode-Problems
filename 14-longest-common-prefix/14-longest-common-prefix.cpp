@@ -20,6 +20,7 @@ public:
                 
             }
             commonPrefixSize = std::min(commonPrefixSize,temp);
+            if(commonPrefixSize==-1) return "";
             //cout<<" i am in loop "<<i<<" "<<commonPrefixSize<<endl;
         }
         
