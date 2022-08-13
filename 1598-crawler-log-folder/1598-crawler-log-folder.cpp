@@ -11,7 +11,7 @@ public:
         
         int ans = 0;
         
-        string element;
+        //string element;
         
         for(int i=0;i<logs.size();i++){
             
