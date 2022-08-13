@@ -1,33 +1,26 @@
 class Solution {
-public:
-    
-    /* 
-    just counting all the child directories while staying back when its ./ ans  going back when its ../
-    
-    but when its root ,../ doesn't effect
-    
-    */
-    int minOperations(vector<string>& logs) {
+    public int minOperations(String[] logs) {
         
-        int ans = 0;
+        int ans =0;
         
-        //string element;
-        
-        for(int i=0;i<logs.size();i++){
+        for(String s : logs){
             
-            if(logs[i]!="../" && logs[i]!="./"){
+            if(!(s.equals("../")||s.equals("./"))) {
                 
                 ans++;
-            }
-            else if(logs[i]=="./"){
                 
-                continue;
             }
-            else if(logs[i]=="../"){
+            else if(s.equals("../")){
                 
-                if(ans!=0) ans--;
+                
+                 if(ans!=0) ans--;
+            }
+            else{
+               continue;
             }
         }
+        
         return ans;
+        
     }
-};
+}
