@@ -25,6 +25,11 @@ public:
         bool loop =true;
         Q.push(root);
         TreeNode* temp;
+        
+        int max = INT_MIN;
+        int ans=0;
+        int level=0;
+        
         while(!Q.empty()){
             levelSum = 0;
             int size = Q.size();
@@ -43,21 +48,27 @@ public:
                 Q.pop();
                 
             }
-            levelSumVec.push_back(levelSum);
+            level++;
+            
+            if(max<levelSum){
+                max = levelSum;
+                ans=level;
+            }
+            //levelSumVec.push_back(levelSum);
             
             //Q.pop();
             
         }
-        int max=INT_MIN,ans = 0;
-        for(int i=0;i<levelSumVec.size();i++){
-            cout<<levelSumVec[i]<<" ";
-            if(max<levelSumVec[i]){
-                max = levelSumVec[i];
-                ans = i;
-            }
+//         int max=INT_MIN,ans = 0;
+//         for(int i=0;i<levelSumVec.size();i++){
+//             cout<<levelSumVec[i]<<" ";
+//             if(max<levelSumVec[i]){
+//                 max = levelSumVec[i];
+//                 ans = i;
+//             }
             
-        }
-        return ++ans;
+//         }
+        return ans;
         
 //         vector<pair<int,int>> levelWisePairs;
         
