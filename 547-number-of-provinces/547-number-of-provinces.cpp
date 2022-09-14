@@ -12,6 +12,7 @@ public:
         //cout<<provinces;
         for(int i=0;i<isConnected.size();i++){
             for(int j=0;j<isConnected[i].size();j++){
+                if(i<=j)
                 if(isConnected[i][j] == 1){
                     Union(i,j);
                 }
