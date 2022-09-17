@@ -2,6 +2,7 @@ class Solution {
     public boolean isBipartite(int[][] graph) {
         int n = graph.length;
         int colors[] = new int[n];
+        
         Queue<Integer> q = new LinkedList<>();
         int qEle;
         
