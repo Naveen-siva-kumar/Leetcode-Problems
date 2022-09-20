@@ -7,11 +7,7 @@ public:
         k=nums.size()-k+1;
         int l = left;int r = right;
         
-        return threeWayPartition(nums,k,right,left,tempSwap,l,r);
-        
-        
-        
-        
+        return threeWayPartition(nums,k,right,left,tempSwap,l,r);   
     }
     public:
     int threeWayPartition(vector<int>& nums,int& k,int& right,int& left,int& tempSwap,int& l,int& r){
