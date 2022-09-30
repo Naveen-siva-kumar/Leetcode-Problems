@@ -36,18 +36,17 @@ public:
     }
     ListNode* merge(ListNode* l,ListNode* r){
     
-        ListNode *ptr = new ListNode(0);
-        ListNode *curr = ptr;
+        ListNode *sentinal = new ListNode(0);
+        ListNode *curr = sentinal;
         
-        while(l != NULL && r != NULL)
-        {
-            if(l->val <= r->val)
-            {
+        while(l != NULL && r != NULL){
+            
+            if(l->val <= r->val){
                 curr -> next = l;
                 l = l -> next;
             }
-            else
-            {
+            
+            else{
                 curr -> next = r;
                 r = r -> next;
             }
@@ -55,19 +54,18 @@ public:
             curr = curr->next;
         
         }
-        if(l != NULL)
-        {
+        
+        if(l != NULL){
             curr -> next = l;
             l = l->next;
         }
         
-        if(r != NULL)
-        {
+        if(r != NULL){
             curr -> next = r;
             r = r ->next;
         }
         
-        return ptr->next;
+        return sentinal->next;
 
     
     }
